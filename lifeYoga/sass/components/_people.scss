@@ -1,0 +1,28 @@
+.people {
+    padding: 7rem 4rem;
+    background-color: $color-grey-light-1;
+
+    grid-row: 9 / 10;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__review {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-column-gap: 3rem;
+    }
+
+    &__img {
+        grid-column: 1 / 2;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 4px;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+    }
+}

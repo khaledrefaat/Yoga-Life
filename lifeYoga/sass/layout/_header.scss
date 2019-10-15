@@ -1,0 +1,39 @@
+.header {
+    background-image: linear-gradient(to right, rgba($color-primary-dark , .6), 
+    rgba($color-primary , .6)), url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    position: relative;
+
+
+    grid-row: 2 / 3;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
+    &__logo {
+        font-weight: 500;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        text-transform: capitalize;
+    }
+
+    &__heading-1 {
+        letter-spacing: 6px;
+        word-spacing: 10px;
+        animation: move-in-right 1s ease-out;
+    }
+
+    &__heading-3 {
+        margin-top: 1.5rem;
+        letter-spacing: 1rem;
+        word-spacing: 1rem;
+        text-align: center;
+
+        animation: move-in-left 1s ease-out;
+    }
+}

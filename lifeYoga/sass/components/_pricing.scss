@@ -1,0 +1,49 @@
+.pricing {
+    padding: 7rem 4rem;
+
+    grid-row: 5 / 6;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row: max-content 1fr;
+    grid-column-gap: 3rem;
+
+    
+    &__card {
+        padding: 4rem;
+        grid-row: 2 / 3;
+        border: .5px dashed $color-grey-dark-1;
+        text-align: center;
+
+        
+        display: grid;
+        justify-content: center;
+        align-content: center;
+
+        
+    }
+
+    &__card-new {
+
+        background-image: linear-gradient(rgba($color-primary, .7) 0%, rgba($color-primary, .7) 50%),
+                        url(../images/pricing-bg.jpg);
+        background-position: center;
+        background-size: cover;
+
+
+        .pricing__text {
+            color: $color-white;
+        }
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+
+        &:first-of-type {
+            margin-top: 1.5rem;
+        }
+    }
+}
