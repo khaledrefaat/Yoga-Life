@@ -52,6 +52,7 @@
 
 .events {
   padding: 7rem 4rem;
+  background-color: #eee;
   grid-row: 8 / 9;
   grid-column: full-start / full-end;
   display: grid;
@@ -115,14 +116,8 @@
       transform: scale(1.05);
       filter: brightness(90%); }
 
-.navigation {
-  background-color: #9c88ff;
-  grid-row: 1 / 2;
-  grid-column: full-start / full-end; }
-
 .people {
   padding: 7rem 4rem;
-  background-color: #eee;
   grid-row: 9 / 10;
   grid-column: full-start / full-end;
   display: grid;
@@ -221,9 +216,7 @@
       transform: translateY(-2px); }
 
 .welcome {
-  background-color: #eee;
-  padding: 10rem 0;
-  margin-top: -10rem;
+  padding-bottom: 10rem;
   overflow: hidden;
   grid-row: 3 / 4;
   grid-column: full-start / full-end;
@@ -363,13 +356,130 @@ body {
 .mt-huge {
   margin-top: 8rem !important; }
 
+.nav {
+  grid-row: 1 / 3;
+  grid-column: full-start / full-end;
+  position: relative;
+  z-index: 3;
+  padding: 4rem 7rem;
+  display: flex;
+  align-items: flex-start;
+  /* dropdown arrow */
+  /* dropdown list style */
+  /* to attach the dropdown list to it */
+  /* the arrow that ahead of the dropdown stlye */
+  /* to show the dropdown navbar when we hover it */
+  /* the second dropdown navbar style */ }
+  .nav__brand {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 300;
+    font-family: "Lato";
+    display: inline-block; }
+  .nav__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    width: 60%; }
+  .nav__link {
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 2rem;
+    transition: color .2s; }
+  .nav__item:hover > .nav__link {
+    color: #bbb; }
+  .nav__link:not(:only-child)::after {
+    content: "\01F893";
+    position: absolute;
+    top: 20%;
+    left: 100%; }
+  .nav__item {
+    position: relative;
+    border-bottom: 2rem solid transparent; }
+  .nav__dropdown--list {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background-color: #000;
+    width: 20rem;
+    border-radius: .8rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all .4s;
+    margin-top: 2rem; }
+  .nav__dropdown--list::after {
+    content: " ";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 15%;
+    border: solid transparent;
+    border-bottom: solid #000;
+    border-width: .7rem;
+    margin-left: -.7rem;
+    pointer-events: none; }
+  .nav__dropdown--item {
+    padding: 1rem; }
+  .nav__dropdown--link {
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    transition: color .2s; }
+  .nav__dropdown--item:hover > .nav__dropdown--link {
+    color: #8ddcee; }
+  .have-child:hover > .nav__dropdown--list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all; }
+  .nav .dropdown--have-child ul {
+    list-style: none;
+    background-color: #000;
+    position: absolute;
+    left: 100%;
+    top: 70%;
+    width: 18rem;
+    border-radius: .8rem;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s; }
+  .nav .dropdown--have-child li {
+    padding: 1rem; }
+  .nav .dropdown--have-child a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    position: relative;
+    transition: color .2s; }
+  .nav .dropdown--have-child a:not(:only-child)::after {
+    content: "\01F892";
+    position: absolute;
+    bottom: -15%;
+    left: 100%;
+    color: #fff;
+    margin-left: 1rem; }
+  .nav .dropdown--have-child a:hover {
+    color: #8ddcee; }
+  .nav .dropdown--have-child:hover > ul {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible; }
+
 .header {
-  background-image: linear-gradient(to right, rgba(96, 163, 188, 0.6), rgba(130, 204, 221, 0.6)), url(../images/bg.jpg);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/bg.jpg);
   background-size: cover;
   background-position: center;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  position: relative;
-  grid-row: 2 / 3;
+  /* clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); */
+  background-attachment: fixed;
+  grid-row: 1 / 3;
   grid-column: full-start / full-end;
   display: grid;
   align-content: center;

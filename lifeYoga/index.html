@@ -15,13 +15,37 @@
 
 <body>
     <div class="container">
-        <nav class="navigation">
+        <nav class="nav">
+            <div class="nav__brand">LifeYoga</div>
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#" class="nav__link">home</a></li>
+                <li class="nav__item have-child">
+                    <a href="#" class="nav__link">yoga classes</a>
+                    <ul class="nav__dropdown--list">
+                        <li class="nav__dropdown--item"> <a href="#" class="nav__dropdown--link">yoga dance</a></li>
+                        <li class="nav__dropdown--item"><a href="#" class="nav__dropdown--link">bare workout</a></li>
+                        <li class="nav__dropdown--item"><a href="#" class="nav__dropdown--link">peace of mind</a></li>
+                        <li class="nav__dropdown--item dropdown--have-child">
+                            <a href="#" class="nav__dropdown--link">more</a>
+                            <ul>
+                                <li><a href="#">yoga dance</a></li>
+                                <li><a href="#">bare workout</a></li>
+                                <li><a href="#">peace of mind</a></li>
+                            </ul>
+                        </li>
+                </li>
+            </ul>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">events</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">about studio</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">contact</a></li>
+            </ul>
         </nav>
 
         <header class="header">
-            <h3 class="heading-3 heading-3--white header__logo">lifeYoga</h2>
-                <h1 class="heading-1 heading-1--white header__heading-1">Welcome to lifeYoga</h1>
-                <h3 class="heading-3 heading-3--white header__heading-3">Yoga for everybody</h3>
+            <!-- <h3 class="heading-3 heading-3--white header__logo">lifeYoga</h2> -->
+            <h1 class="heading-1 heading-1--white header__heading-1">Welcome to lifeYoga</h1>
+            <h3 class="heading-3 heading-3--white header__heading-3">Yoga for everybody</h3>
         </header>
 
         <section class="welcome">
