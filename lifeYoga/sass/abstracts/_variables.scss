@@ -19,3 +19,10 @@ $color-white: #fff;
 
 $font-display: "Raleway";
 $font-primary: "Lato";
+
+// Responsive breakpoints
+
+$bp-largest: 75em; // 1200px 
+$bp-large: 56.25em; // 900px
+$bp-medium: 46.875em; // 750px
+$bp-small: 37.5em; // 650px

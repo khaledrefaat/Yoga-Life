@@ -6,12 +6,20 @@
     grid-column: full-start / full-end;
 
     display: grid;
-    grid-template-rows: max-content 1fr;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 4rem;
+    grid-template-rows: max-content repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    grid-column-gap: 2rem;
+
+    @media screen and(min-width: $bp-small) {
+        grid-template-rows: max-content 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 4rem;
+    }
 
     &__event {
-        grid-row: 2 / 3;
+        @media screen and(min-width: $bp-small){
+            grid-row: 2 / 3;
+        }
     }
     
 

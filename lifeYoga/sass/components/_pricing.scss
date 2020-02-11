@@ -1,18 +1,30 @@
 .pricing {
-    padding: 7rem 4rem;
+    padding: 5rem 3rem;
 
     grid-row: 5 / 6;
     grid-column: full-start / full-end;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-row: max-content 1fr;
-    grid-column-gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+
+    @media screen and(min-width: $bp-small) { // to make pricing cards always 2 or 4
+        grid-template-columns: repeat(2, minmax(25rem, 1fr));
+    }
+
+    @media screen and(min-width: $bp-medium) {
+        grid-column-gap: 3rem;
+        grid-row-gap: 3rem;
+        padding: 15rem 4rem;
+    }
+
+    @media screen and(min-width: $bp-largest) {grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));}
 
     
     &__card {
-        padding: 4rem;
-        grid-row: 2 / 3;
+        padding: 4rem 0;
         border: .5px dashed $color-grey-dark-1;
         text-align: center;
 
@@ -20,16 +32,16 @@
         display: grid;
         justify-content: center;
         align-content: center;
-
-        
     }
 
     &__card-new {
 
         background-image: linear-gradient(rgba($color-primary, .7) 0%, rgba($color-primary, .7) 50%),
                         url(../images/pricing-bg.jpg);
-        background-position: center;
+        background-position: top;
         background-size: cover;
+
+        @media screen and(min-width: $bp-largest){background-position: center;}
 
 
         .pricing__text {
@@ -41,6 +53,8 @@
         font-size: 1.6rem;
         font-weight: 400;
         margin-bottom: 1rem;
+
+        
 
         &:first-of-type {
             margin-top: 1.5rem;

@@ -42,6 +42,7 @@
         background-color: $color-primary;
         z-index: -1;
         transition: all .4s;
+        pointer-events: none;
      }
 
      // for pricing new client

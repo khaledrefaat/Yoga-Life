@@ -6,21 +6,32 @@
 
     display: grid;
     grid-template-rows: max-content 1fr;
-    grid-template-columns: repeat(2, 1fr);
-
-    &__review {
-        display: grid;
-        grid-template-columns: min-content 1fr;
+    grid-row-gap: 4rem;
+    @media screen and(min-width: $bp-small) {
+        grid-template-rows: max-content 1fr;
+        grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 3rem;
     }
 
+    &__review {
+        display: grid;
+        grid-row-gap: 3rem;
+        text-align: center;
+
+        @media screen and(min-width: $bp-small) {
+            grid-template-columns: min-content 1fr;
+            grid-column-gap: 3rem;
+        }
+    }
+
     &__img {
-        grid-column: 1 / 2;
         width: 8rem;
         height: 8rem;
         border-radius: 4px;
+        display: block;
+        margin: 0 auto;
+        @media screen and(min-width: $bp-small) {grid-column: 1 / 2;}
     }
-
     &__text {
         font-size: 1.6rem;
     }

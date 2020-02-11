@@ -1,14 +1,21 @@
 .section-programs {
-    padding: 15rem 6rem;
+    padding: 5rem 3rem;
 
     grid-row: 4 / 5;
     grid-column: full-start / full-end;
+
+    @media screen and(min-width: $bp-large) {
+        padding: 15rem 4rem;
+    }
 }
 
 .programs {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 3rem;
+
+
+    @media screen and(min-width: $bp-large) {grid-gap: 5rem;}
 
     .program {
         display: grid;
@@ -20,9 +27,16 @@
 
 
         &__content {
-            padding: 2rem 3rem;
-            display: grid;
-            align-content: center;
+            padding: 1rem 1rem;
+
+            @media screen and(min-width: $bp-large) {
+                padding: 2rem 1rem;
+            }
+
+            @media screen and(min-width: $bp-largest) {
+                padding: 2rem 3rem;
+            }
+
         }
 
         &__img {

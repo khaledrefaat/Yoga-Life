@@ -4,8 +4,9 @@
     position: relative;
     z-index: 3;
     padding: 4rem 7rem;
+    height: 8vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 
 
     &__brand {
@@ -14,13 +15,13 @@
         font-weight: 300;
         font-family: $font-primary;
         display: inline-block;
+        cursor: pointer;
     }
 
     &__list {
         list-style: none;
         display: flex;
         justify-content: space-around;
-        align-items: center;
         margin-left: auto;
         width: 60%;
     }
@@ -50,6 +51,7 @@
     &__item {
         position: relative;
         border-bottom: 2rem solid transparent;
+        border-top: 2rem solid transparent;
     }
 
     /* to attach the dropdown list to it */
@@ -161,4 +163,37 @@
     }
 
 
+}
+
+/* Sticky navbar class */
+
+
+.sticky {
+    position: fixed;
+    top: 0;
+    right: -7%;
+    width: 100%;
+    padding: 0rem 7rem;
+    background-color: #fff;
+    box-shadow: 0 1rem 1.5rem rgba($color-black, .15);
+    height: 6vh;
+
+
+    & .nav__brand {
+        color: $color-black;
+    }
+
+    & .nav__link {
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: 400;
+    }
+
+    & .nav__item:hover>.nav__link {
+        color: #000;
+    }
+
+
+    & .nav__dropdown--item:hover>.nav__dropdown--link {
+        color: $color-primary-light;
+    }
 }

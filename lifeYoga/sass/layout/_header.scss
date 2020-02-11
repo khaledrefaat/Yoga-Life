@@ -24,15 +24,21 @@
 
     &__heading-1 {
         letter-spacing: 6px;
-        word-spacing: 10px;
         animation: move-in-right 1s ease-out;
+
+        @media screen and(min-width: $bp-medium) {
+            word-spacing: 1rem;
+        }
     }
 
     &__heading-3 {
         margin-top: 1.5rem;
-        letter-spacing: 1rem;
-        word-spacing: 1rem;
         text-align: center;
+
+        @media screen and(min-width: $bp-medium) {
+            letter-spacing: 1rem;
+            word-spacing: 1rem;
+        }
 
         animation: move-in-left 1s ease-out;
     }
