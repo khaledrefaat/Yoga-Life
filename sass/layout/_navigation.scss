@@ -1,299 +1,302 @@
 .nav {
-    grid-row: 1 / 3;
-    grid-column: full-start / full-end;
-    position: fixed;
-    width: 100%;
-    z-index: 3;
-    padding: 4rem 7rem;
-    height: 2vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: $color-grey-dark-3;
+	grid-row: 1 / 3;
+	grid-column: full-start / full-end;
+	position: fixed;
+	width: 100%;
+	z-index: 3;
+	padding: 4rem 7rem;
+	height: 1vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background-color: $color-grey-dark-3;
 
-    @media screen and(min-width: $bp-medium){    background-color: transparent;
-    height: 8vh;
-    position: relative;
-    }
+	@media screen and(min-width: $bp-medium) {
+		box-shadow: 0 1rem 1.5rem rgba($color-black, .15);
+		padding: 0rem 7rem;
+		background-color: $color-white;
+		height: 6vh;
+		top: 0;
+		right: -7%;
+		width: 100%;
+	}
 
-    &__brand {
-        font-size: 3rem;
-        color: $color-white;
-        font-weight: 700;
-        font-family: $font-primary;
-        display: inline-block;
-        cursor: pointer;    
-    }
-    
-  &__list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    /* align-items: center; */
-    background-color: $color-grey-dark-3;
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding-left: 5rem;
-    /* opacity: 0;
-    visibility: hidden;
-    pointer-events: none; */
+	&__brand {
+		font-size: 3rem;
+		color: $color-white;
+		font-weight: 700;
+		font-family: $font-primary;
+		display: inline-block;
+		cursor: pointer;
 
-    @media screen and(min-width: $bp-medium) {
-        width: 60%;
-        flex-direction: row;
-        position: relative;
-        background-color: transparent;
-        top: 0;
-        left: 0;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-    }
-}
+		@media screen and(min-width: $bp-medium) {
+			color: $color-black;
+		}
+	}
 
-    &__item {
-        /* width: 100%; */
-/*         text-align: center; */
+	&__list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		/* align-items: center; */
+		background-color: $color-grey-dark-3;
+		width: 100%;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		padding-left: 5rem;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all .2s;
 
-        /* to make dropdown list able to hover */
-        position: relative;
-        border-bottom: 2rem solid transparent;
-        border-top: 2rem solid transparent;
-    }
+		@media screen and(min-width: $bp-medium) {
+			width: 70%;
+			flex-direction: row;
+			position: relative;
+			background-color: transparent;
+			top: 0;
+			left: 0;
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
 
-    &__link {
-        text-decoration: none;
-        color: $color-white;
-        text-transform: capitalize;
-        font-size: 2rem;
-        transition: color .2s;
-        font-weight: 700;
+		@media screen and(min-width: $bp-large) {
+			width: 60%;
+		}
+	}
 
-        @media screen and(min-width: $bp-medium){
-            font-size: 2rem;
-            font-weight: 400;
-        }
-    }
+	&__list--toggle {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+	}
 
-    &__item:hover > &__link{
-        color: $color-primary-light;
-        @media screen and(min-width: $bp-medium) {color: $color-grey-dark-1}
-    }
+	&__item {
+		/* width: 100%; */
+		/*         text-align: center; */
 
-/*     &__item:hover > &__link {
+		/* to make dropdown list able to hover */
+		position: relative;
+		border-bottom: 2rem solid transparent;
+		border-top: 2rem solid transparent;
+	}
+
+	&__link {
+		text-decoration: none;
+		color: $color-grey-dark-1;
+		text-transform: capitalize;
+		font-size: 2rem;
+		transition: color .2s;
+		font-weight: 700;
+
+		@media screen and(min-width: $bp-medium) {
+			font-size: 2rem;
+			font-weight: 400;
+		}
+	}
+
+	&__item:hover > &__link {
+		color: $color-primary-light;
+		@media screen and(min-width: $bp-medium) {
+			color: $color-black;
+		}
+	}
+
+	/*     &__item:hover > &__link {
         @media screen and(min-width: $bp-medium) {color: $color-grey-dark-1}
     }
  */
-    /* dropdown arrow */
-    &__link:not(:only-child)::after {
-        content: "\25BF";
-        position: absolute;
-        top: 5%;
-        right: 5%;
-        font-size: 16px;
+	/* dropdown arrow */
+	&__link:not(:only-child)::after {
+		content: "\25BF";
+		position: absolute;
+		top: 0;
+		right: 86%;
+		font-size: 16px;
 
-        @media screen and(min-width: $bp-medium) {
-            bottom: 10%;
-            left: 100%;
-        }
-    }
+		@media screen and(min-width: $bp-medium) {
+			top: 15%;
+			left: 100%;
+			color: rgba(0, 0, 0, 0.6);
+		}
+	}
 
+	&__dropdown--list {
+		list-style: none;
+		transition: all .3s;
+		margin-top: 2rem;
+		/*      width: 100%; */
+		/*      text-align: center; */
+		transform: translateX(5%);
+		display: none;
+		@media screen and(min-width: $bp-medium) {
+			width: 20rem;
+			position: absolute;
+			top: 100%;
+			left: 0%;
+			border-radius: .8rem;
+			background-color: $color-black;
+			display: block;
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+	}
 
+	&__dropdown--list--toggle {
+		display: block;
+	}
 
-    &__dropdown--list {
-        list-style: none;
-        transition: all .3s;
-        margin-top: 2rem;
-/*      width: 100%; */
-/*      text-align: center; */
-        transform: translateX(5%); 
-        display: none;
-        @media screen and(min-width: $bp-medium) {
-            width: 20rem;
-            position: absolute;
-            top: 100%;
-            left: 0%;
-            border-radius: .8rem;
-            background-color: $color-black;
-            display: block;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-    }
+	/* the arrow that ahead of the dropdown stlye */
 
-    /* the arrow that ahead of the dropdown stlye */
+	@media screen and(min-width: $bp-medium) {
+		&__dropdown--list::after {
+			content: " ";
+			width: 0;
+			height: 0;
+			position: absolute;
+			bottom: 100%;
+			left: 15%;
+			border: solid transparent;
+			border-bottom: solid #000;
+			border-width: .7rem;
+			margin-left: -.7rem;
+			pointer-events: none;
+		}
+	}
 
-    @media screen and(min-width: $bp-medium) {      
-        &__dropdown--list::after {
-            content: " ";
-            width: 0;
-            height: 0;
-            position: absolute;
-            bottom: 100%;
-            left: 15%;
-            border: solid transparent;
-            border-bottom: solid #000;
-            border-width: .7rem;
-            margin-left: -.7rem;
-            pointer-events: none;
-        }
-    }
+	&__dropdown--item {
+		padding: 1rem;
+		position: relative;
+	}
 
-    &__dropdown--item {
-        padding: 1rem;
-    }
+	&__dropdown--link {
+		text-decoration: none;
+		color: $color-white;
+		text-transform: capitalize;
+		font-size: 2rem;
+		transition: color .2s;
+		font-weight: 700;
+	}
 
-    &__dropdown--link {
-        text-decoration: none;
-        color: $color-white;
-        text-transform: capitalize;
-        font-size: 2rem;
-        transition: color .2s;
-        font-weight: 700;
-    }
+	&__dropdown--item:hover > &__dropdown--link {
+		color: $color-primary-light;
+	}
 
-    &__dropdown--item:hover>&__dropdown--link {
-        color: $color-primary-light;
-    }
+	&__dropdown--link:not(:only-child)::after {
+		content: "\25BF";
+		position: absolute;
+		top: 1.5rem; /* i dont know why it require rem to fix a bug  */
+		left: 5%;
+		color: #fff;
+		margin-left: 1rem;
+		font-size: 16px;
 
-    /* to show the dropdown navbar when we hover it */
+		@media screen and(min-width: $bp-medium) {
+			content: "\25B9";
+			bottom: 5%;
+			left: 25%;
+		}
+	}
 
-    .have-child:hover>&__dropdown--list {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-    }
+	/* to show the dropdown navbar when we hover it */
 
-    /* the second dropdown navbar style */
+	.have-child:hover > &__dropdown--list {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: all;
+	}
 
-    &__dropdown--have-child {
+	/* the second dropdown navbar style */
 
-        ul {
-            list-style: none;
-            width: 18rem;
-            border-radius: .8rem;
-            transition: all .4s;
-            transform: translateX(10%);
-            display: none;
+	&__dropdown--have-child {
+		&--list {
+			list-style: none;
+			width: 18rem;
+			border-radius: .8rem;
+			transition: all .4s;
+			transform: translateX(10%);
+			display: none;
 
-            @media screen and(min-width: $bp-medium) {
-                background-color: #000;
-                position: absolute;
-                left: 90%;
-                top: 70%;
-                visibility: hidden;
-                opacity: 0;
-                pointer-events: none;
-                display: block;
-            }
-        }
+			@media screen and(min-width: $bp-medium) {
+				background-color: #000;
+				position: absolute;
+				left: 90%;
+				top: 70%;
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+				display: block;
+			}
+		}
 
-        li {
-            padding: 1rem;
-        }
+		/* to toggle third list */
+		&--toggle {
+			display: block;
+		}
 
-        a {
-            text-decoration: none;
-            color: $color-white;
-            text-transform: capitalize;
-            font-size: 2rem;
-            position: relative;
-            transition: color .2s;
-            font-weight: 700;
+		&--item {
+			padding: 1rem;
+		}
 
-            @media screen and(min-width: $bp-medium) {
-                font-weight: 400;
-                font-size: 1.8rem;
-            }
-        }
+		&--link {
+			text-decoration: none;
+			color: $color-white;
+			text-transform: capitalize;
+			font-size: 2rem;
+			position: relative;
+			transition: color .2s;
+			font-weight: 700;
 
-        a:not(:only-child)::after {
-            content: "\25B9";
-            position: absolute;
-            bottom: -15%;
-            left: 100%;
-            color: #fff;
-            margin-left: 1rem;
-            font-size: 16px;
-        }
+			@media screen and(min-width: $bp-medium) {
+				font-weight: 400;
+				font-size: 1.8rem;
+			}
+		}
 
-        a:hover {
-            color: $color-primary-light;
-        }
+		&--link:hover {
+			color: $color-primary-light;
+		}
 
-        &:hover>ul {
-            opacity: 1;
-            pointer-events: all;
-            visibility: visible;
-        }
-    }
+		&:hover > &--list {
+			opacity: 1;
+			pointer-events: all;
+			visibility: visible;
+		}
+	}
 
-    /* hamburguer style */
+	/* hamburguer style */
 
-    &__hamburguer {
-        width: 5rem;
-        height: 5rem;
+	&__hamburguer {
+		width: 5rem;
+		height: 5rem;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		cursor: pointer;
 
-        @media screen and(min-width: $bp-medium) {display: none;}
-    }
+		@media screen and(min-width: $bp-medium) {
+			display: none;
+		}
+	}
 
-    &__hamburguer--middle,
-    &__hamburguer::before,
-    &__hamburguer::after {
-        width: 3rem;
-        height: 3px;
-        background-color: $color-white;
-        margin: .3rem;
-    }
-    &__hamburguer::before,
-    &__hamburguer::after {
-        content: "";
-    }
-
+	&__hamburguer--middle,
+	&__hamburguer::before,
+	&__hamburguer::after {
+		width: 3rem;
+		height: 3px;
+		background-color: $color-white;
+		margin: .3rem;
+	}
+	&__hamburguer::before,
+	&__hamburguer::after {
+		content: "";
+	}
 }
-
-
-
 
 /* Sticky navbar class */
-
-
-.sticky {
-    position: fixed;
-    top: 0;
-    right: -7%;
-    width: 100%;
-    padding: 0rem 7rem;
-    background-color: #fff;
-    box-shadow: 0 1rem 1.5rem rgba($color-black, .15);
-    height: 6vh;
-
-
-    & .nav__brand {
-        color: $color-black;
-    }
-
-    & .nav__link {
-        color: rgba(0, 0, 0, 0.6);
-        font-weight: 400;
-    }
-
-    & .nav__item:hover>.nav__link {
-        color: #000;
-    }
-
-
-    & .nav__dropdown--item:hover>.nav__dropdown--link {
-        color: $color-primary-light;
-    }
-}
