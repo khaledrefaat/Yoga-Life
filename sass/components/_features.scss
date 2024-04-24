@@ -17,10 +17,17 @@
 
     &__box {
         text-align: center;
+        margin-bottom: 4rem;
 
+
+        
 
         @media screen and (min-width: $bp-small) {
             grid-row: 2 / 3;
+        }
+
+        @media screen and (min-width: $bp-small) {
+            margin-bottom: 0;
         }
     }
 
