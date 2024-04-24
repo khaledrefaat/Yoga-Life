@@ -10,17 +10,17 @@
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
 
-    @media screen and(min-width: $bp-small) { // to make pricing cards always 2 or 4
+    @media screen and (min-width: $bp-small) { // to make pricing cards always 2 or 4
         grid-template-columns: repeat(2, minmax(25rem, 1fr));
     }
 
-    @media screen and(min-width: $bp-medium) {
+    @media screen and (min-width: $bp-medium) {
         grid-column-gap: 3rem;
         grid-row-gap: 3rem;
         padding: 15rem 4rem;
     }
 
-    @media screen and(min-width: $bp-largest) {grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));}
+    @media screen and (min-width: $bp-largest) {grid-template-columns: repeat(4, minmax(25rem, 1fr));}
 
     
     &__card {
@@ -41,7 +41,7 @@
         background-position: top;
         background-size: cover;
 
-        @media screen and(min-width: $bp-largest){background-position: center;}
+        @media screen and (min-width: $bp-largest){background-position: center;}
 
 
         .pricing__text {

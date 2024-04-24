@@ -11,7 +11,7 @@
 	justify-content: space-around;
 	background-color: $color-grey-dark-3;
 
-	@media screen and(min-width: $bp-medium) {
+	@media screen and (min-width: $bp-medium) {
 		box-shadow: 0 1rem 1.5rem rgba($color-black, .15);
 		padding: 0rem 7rem;
 		background-color: $color-white;
@@ -29,7 +29,7 @@
 		display: inline-block;
 		cursor: pointer;
 
-		@media screen and(min-width: $bp-medium) {
+		@media screen and (min-width: $bp-medium) {
 			color: $color-black;
 		}
 	}
@@ -51,7 +51,7 @@
 		pointer-events: none;
 		transition: all .2s;
 
-		@media screen and(min-width: $bp-medium) {
+		@media screen and (min-width: $bp-medium) {
 			width: 70%;
 			flex-direction: row;
 			position: relative;
@@ -63,7 +63,7 @@
 			pointer-events: all;
 		}
 
-		@media screen and(min-width: $bp-large) {
+		@media screen and (min-width: $bp-large) {
 			width: 60%;
 		}
 	}
@@ -92,7 +92,7 @@
 		transition: color .2s;
 		font-weight: 700;
 
-		@media screen and(min-width: $bp-medium) {
+		@media screen and (min-width: $bp-medium) {
 			font-size: 2rem;
 			font-weight: 400;
 		}
@@ -100,13 +100,13 @@
 
 	&__item:hover > &__link {
 		color: $color-primary-light;
-		@media screen and(min-width: $bp-medium) {
+		@media screen and (min-width: $bp-medium) {
 			color: $color-black;
 		}
 	}
 
 	/*     &__item:hover > &__link {
-        @media screen and(min-width: $bp-medium) {color: $color-grey-dark-1}
+        @media screen and (min-width: $bp-medium) {color: $color-grey-dark-1}
     }
  */
 	/* dropdown arrow */
@@ -117,7 +117,7 @@
 		right: 86%;
 		font-size: 16px;
 
-		@media screen and(min-width: $bp-medium) {
+		@media screen and (min-width: $bp-medium) {
 			top: 15%;
 			left: 100%;
 			color: rgba(0, 0, 0, 0.6);
@@ -132,7 +132,7 @@
 		/*      text-align: center; */
 		transform: translateX(5%);
 		display: none;
-		@media screen and(min-width: $bp-medium) {
+		@media screen and (min-width: $bp-medium) {
 			width: 20rem;
 			position: absolute;
 			top: 100%;
@@ -152,7 +152,7 @@
 
 	/* the arrow that ahead of the dropdown stlye */
 
-	@media screen and(min-width: $bp-medium) {
+	@media screen and (min-width: $bp-medium) {
 		&__dropdown--list::after {
 			content: " ";
 			width: 0;
@@ -195,7 +195,7 @@
 		margin-left: 1rem;
 		font-size: 16px;
 
-		@media screen and(min-width: $bp-medium) {
+		@media screen and (min-width: $bp-medium) {
 			content: "\25B9";
 			bottom: 5%;
 			left: 25%;
@@ -221,7 +221,7 @@
 			transform: translateX(10%);
 			display: none;
 
-			@media screen and(min-width: $bp-medium) {
+			@media screen and (min-width: $bp-medium) {
 				background-color: #000;
 				position: absolute;
 				left: 90%;
@@ -251,7 +251,7 @@
 			transition: color .2s;
 			font-weight: 700;
 
-			@media screen and(min-width: $bp-medium) {
+			@media screen and (min-width: $bp-medium) {
 				font-weight: 400;
 				font-size: 1.8rem;
 			}
@@ -280,7 +280,7 @@
 		flex-direction: column;
 		cursor: pointer;
 
-		@media screen and(min-width: $bp-medium) {
+		@media screen and (min-width: $bp-medium) {
 			display: none;
 		}
 	}

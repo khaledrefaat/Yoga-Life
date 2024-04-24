@@ -12,11 +12,11 @@ html {
 	font-size: 50%; // 1rem = 8px
 	box-sizing: box-sizing;
 
-	@media screen and(min-width: $bp-medium) {
+	@media screen and (min-width: $bp-medium) {
 		font-size: 56.625%;
 	} // 1rem = 9px
 
-	@media screen and(min-width: $bp-large) {
+	@media screen and (min-width: $bp-large) {
 		font-size: 62.5%;
 	} // 1rem = 10px
 }
@@ -28,10 +28,10 @@ body {
 	color: $color-grey-dark-2;
 	overflow-x: hidden;
 
-	@media screen and(min-width: $bp-small) {
+	@media screen and (min-width: $bp-small) {
 		line-height: 1.4;
 	}
-	@media screen and(min-width: $bp-medium) {
+	@media screen and (min-width: $bp-medium) {
 		line-height: 1.6;
 	}
 }

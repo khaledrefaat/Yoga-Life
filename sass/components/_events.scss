@@ -10,14 +10,14 @@
     grid-template-columns: 1fr;
     grid-column-gap: 2rem;
 
-    @media screen and(min-width: $bp-small) {
+    @media screen and (min-width: $bp-small) {
         grid-template-rows: max-content 1fr;
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 4rem;
     }
 
     &__event {
-        @media screen and(min-width: $bp-small){
+        @media screen and (min-width: $bp-small){
             grid-row: 2 / 3;
         }
     }

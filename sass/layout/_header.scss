@@ -26,7 +26,7 @@
         letter-spacing: 6px;
         animation: move-in-right 1s ease-out;
 
-        @media screen and(min-width: $bp-medium) {
+        @media screen and (min-width: $bp-medium) {
             word-spacing: 1rem;
         }
     }
@@ -35,7 +35,7 @@
         margin-top: 1.5rem;
         text-align: center;
 
-        @media screen and(min-width: $bp-medium) {
+        @media screen and (min-width: $bp-medium) {
             letter-spacing: 1rem;
             word-spacing: 1rem;
         }
